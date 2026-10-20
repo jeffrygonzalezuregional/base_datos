@@ -1,15 +1,15 @@
 from flask import Flask, render_template, request, redirect
 import mysql.connector
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 # === CONFIGURACIÓN DE CONEXIÓN A TU BASE DE DATOS ===
 DB_CONFIG = {
-    "host": "localhost",
+    "host": "192.168.56.10",
     "port": 3306,
-    "user": "root",           # ← Tu usuario de MySQL
-    "password": "tu_contraseña",  # ← Tu contraseña de MySQL
-    "database": "agenda_db"
+    "user": "app_user",           # ← Tu usuario de MySQL
+    "password": "jeffry.1988",  # ← Tu contraseña de MySQL
+    "database": "mi_base_datos"
 }
 
 def obtener_conexion():
@@ -52,5 +52,5 @@ def mostrar():
     conexion.close()
     return render_template("mostrar.html", personas=personas)
 
-if _name_ == "_main_":
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port= 5000, debug=True)
