@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ingreso de Datos</title>
+    <style>
+        body { font-family: Arial; max-width: 500px; margin: 30px auto; padding: 20px; }
+        form { background: #f5f5f5; padding: 25px; border-radius: 10px; }
+        label { display: block; margin-top: 12px; font-weight: bold; }
+        input { width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px; }
+        button { margin-top: 20px; padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+        button:hover { background: #218838; }
+        .link { margin-top: 20px; display: inline-block; color: #0066cc; }
+    </style>
+</head>
+<body>
+    <h1>Registro de Personas</h1>
+    <form method="POST">
+        <label>Nombre Completo:</label>
+        <input type="text" name="nombre" required>
+
+        <label>Teléfono:</label>
+        <input type="tel" name="telefono" required>
+
+        <label>DPI:</label>
+        <input type="text" name="dpi" required>
+
+        <button type="submit">Guardar Datos</button>
+    </form>
+    <a href="/mostrar" class="link">Ver todos los registros guardados</a>
+</body>
+</html>
