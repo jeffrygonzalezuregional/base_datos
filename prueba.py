@@ -20,9 +20,9 @@ def obtener_conexion():
 def index():
     if request.method == "POST":
         # Recibir datos del formulario
-        nombre = request.form["nombre"]
-        telefono = request.form["telefono"]
-        dpi = request.form["dpi"]
+        nombre = request.form["NOMBRE"]
+        telefono = request.form["TELEFONO"]
+        dpi = request.form["DPI"]
 
         # Insertar en la base de datos
         conexion = obtener_conexion()
