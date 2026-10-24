@@ -52,5 +52,20 @@ def mostrar():
     conexion.close()
     return render_template("mostrar.html", personas=personas)
 
+@app.route('/eliminar/<dpi>')
+def eliminar(dpi):
+    conexion = obtener_conexion()
+    cursor = conexion.cursor()
+    try:
+        sql = "DELETE FROM personas WHERE DPI = %s"
+        cursor.execute(sql, (dpi,))
+        conexion.commit()
+    except Exception as e:
+        print(f"Error: {e}")
+    finally:
+        cursor.close()
+        conexion.close()
+    
+    return redirect('/mostrar')
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port= 5000, debug=True)
