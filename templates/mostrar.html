@@ -19,17 +19,17 @@
     <table>
         <thead>
             <tr>
-                <th>Nombre</th>
-                <th>Teléfono</th>
+                <th>NOMBRE</th>
+                <th>TELEFONO</th>
                 <th>DPI</th>
             </tr>
         </thead>
         <tbody>
         {% for persona in personas %}
             <tr>
-                <td>{{ persona.nombre }}</td>
-                <td>{{ persona.telefono }}</td>
-                <td>{{ persona.dpi }}</td>
+                <td>{{ persona.NOMBRE }}</td>
+                <td>{{ persona.TELEFONO }}</td>
+                <td>{{ persona.DPI }}</td>
             </tr>
         {% else %}
             <tr>
