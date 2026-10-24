@@ -17,26 +17,32 @@
     <a href="/">← Volver al formulario</a>
 
     <table>
-        <thead>
-            <tr>
-                <th>NOMBRE</th>
-                <th>TELEFONO</th>
-                <th>DPI</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for persona in personas %}
-            <tr>
-                <td>{{ persona.NOMBRE }}</td>
-                <td>{{ persona.TELEFONO }}</td>
-                <td>{{ persona.DPI }}</td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3" style="text-align:center; color:#666;">No hay registros guardados</td>
-            </tr>
-        {% endfor %}
-        </tbody>
+       <thead>
+  <tr>
+    <th>NOMBRE</th>
+    <th>TELEFONO</th>
+    <th>DPI</th>
+    <th>Acción</th> 👈 Nueva columna
+  </tr>
+</thead>
+<tbody>
+  {% for persona in personas %}
+  <tr>
+    <td>{{ persona.NOMBRE }}</td>
+    <td>{{ persona.TELEFONO }}</td>
+    <td>{{ persona.DPI }}</td>
+    <td>
+      <a href="/eliminar/{{ persona.DPI }}" onclick="return confirm('¿Seguro que quieres eliminar este registro?')">
+        <button style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer;">Eliminar</button>
+      </a>
+    </td>
+  </tr>
+  {% else %}
+  <tr>
+    <td colspan="4" style="text-align:center; padding: 15px; color: #666;">No se encontraron registros</td>
+  </tr>
+  {% endfor %}
+</tbody>
     </table>
 </body>
 </html>
